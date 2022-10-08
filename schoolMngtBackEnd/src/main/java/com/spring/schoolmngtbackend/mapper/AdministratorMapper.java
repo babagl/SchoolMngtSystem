@@ -6,7 +6,7 @@ import com.spring.schoolmngtbackend.bean.Staff;
 import com.spring.schoolmngtbackend.bean.TimeTable;
 import com.spring.schoolmngtbackend.dto.AdministratorDto;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
 
 import java.time.LocalDate;
 import java.util.List;

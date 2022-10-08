@@ -2,9 +2,11 @@ package com.spring.schoolmngtbackend.mapper;
 
 import com.spring.schoolmngtbackend.bean.ClassRoom;
 import com.spring.schoolmngtbackend.dto.ClassRoomDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ClassRoomMapper implements EntityMapper<ClassRoom, ClassRoomDto> {
 
     @Override

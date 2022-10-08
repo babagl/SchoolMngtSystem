@@ -2,9 +2,11 @@ package com.spring.schoolmngtbackend.mapper;
 
 import com.spring.schoolmngtbackend.bean.Staff;
 import com.spring.schoolmngtbackend.dto.StaffDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class StaffMapper implements EntityMapper<Staff, StaffDto> {
     @Override
     public Staff toEntity(StaffDto dto) {

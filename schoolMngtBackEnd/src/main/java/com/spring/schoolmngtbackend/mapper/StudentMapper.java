@@ -2,9 +2,11 @@ package com.spring.schoolmngtbackend.mapper;
 
 import com.spring.schoolmngtbackend.bean.Students;
 import com.spring.schoolmngtbackend.dto.StudentDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class StudentMapper implements EntityMapper<Students, StudentDto> {
     @Override
     public Students toEntity(StudentDto dto) {

@@ -2,9 +2,11 @@ package com.spring.schoolmngtbackend.mapper;
 
 import com.spring.schoolmngtbackend.bean.TimeTable;
 import com.spring.schoolmngtbackend.dto.TimeTableDto;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class TimeTableMapper implements EntityMapper<TimeTable, TimeTableDto> {
     @Override
     public TimeTable toEntity(TimeTableDto dto) {
