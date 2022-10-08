@@ -27,17 +27,28 @@ public class Administrator {
     private LocalDate Birthday;
     @Column(name = "address")
     private String address;
-    @OneToMany(
-            cascade = CascadeType.DETACH
-    )
+    @OneToMany(cascade = CascadeType.DETACH)
     List<Instructor> instructors;
     @OneToMany(cascade = CascadeType.DETACH)
     List<TimeTable> timeTables;
     @OneToMany(cascade = CascadeType.DETACH)
     List<Students> students;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.DETACH)
     List<Staff> staff;
 
     public Administrator() {
+    }
+
+    public Administrator(String fullName, String userName, String email, String password, LocalDate birthday, String address, List<Instructor> instructors, List<TimeTable> timeTables, List<Students> students, List<Staff> staff) {
+        this.fullName = fullName;
+        this.userName = userName;
+        Email = email;
+        this.password = password;
+        Birthday = birthday;
+        this.address = address;
+        this.instructors = instructors;
+        this.timeTables = timeTables;
+        this.students = students;
+        this.staff = staff;
     }
 }

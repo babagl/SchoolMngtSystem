@@ -30,7 +30,7 @@ public class Instructor {
     private String address;
     @ManyToMany(
             fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE,CascadeType.MERGE}
+            cascade = {CascadeType.MERGE}
     )
             @JoinTable(
                     name = "instructor_timeTable",
