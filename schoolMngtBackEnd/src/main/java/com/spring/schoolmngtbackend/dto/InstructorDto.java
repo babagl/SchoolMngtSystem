@@ -14,13 +14,13 @@ public class InstructorDto {
 
     private String fullName;
 
-    private String userName;
+    private String username;
 
-    private String Email;
+    private String email;
 
     private String password;
 
-    private String Birthday;
+    private String birthday;
 
     private String address;
 

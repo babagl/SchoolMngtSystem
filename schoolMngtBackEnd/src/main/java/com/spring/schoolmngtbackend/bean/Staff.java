@@ -28,6 +28,8 @@ public class Staff {
     private LocalDate Birthday;
     @Column(name = "address")
     private String address;
+    @Enumerated(EnumType.STRING)
+    private Roles roles;
 
     public Staff() {
 

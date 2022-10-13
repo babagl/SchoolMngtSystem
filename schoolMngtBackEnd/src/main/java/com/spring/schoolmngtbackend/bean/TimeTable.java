@@ -14,7 +14,7 @@ public class TimeTable {
     @Column(name = "idTimeTable")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idTimeTable;
-    @Column(name = "matier")
+    @Column(name = "matier",unique = true)
     private String matiere;
     @Column(name = "startTime")
     private LocalTime StartTime;

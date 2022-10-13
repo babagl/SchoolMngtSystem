@@ -1,9 +1,6 @@
 package com.spring.schoolmngtbackend.mapper;
 
-import com.spring.schoolmngtbackend.bean.Administrator;
-import com.spring.schoolmngtbackend.bean.Instructor;
-import com.spring.schoolmngtbackend.bean.Staff;
-import com.spring.schoolmngtbackend.bean.TimeTable;
+import com.spring.schoolmngtbackend.bean.*;
 import com.spring.schoolmngtbackend.dto.AdministratorDto;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +21,9 @@ public class AdministratorMapper implements EntityMapper<Administrator, Administ
         administrator.setUserName(dto.getUserName());
         administrator.setEmail(dto.getEmail());
         administrator.setPassword(dto.getPassword());
-        administrator.setBirthday(LocalDate.parse(dto.getBirthday()));
+        administrator.setBirthday(LocalDate.of(2021,12,12));
+        administrator.setRoles(Roles.ADMINISTRATOR);
+        //administrator.setBirthday(LocalDate.parse(dto.getBirthday()));
         administrator.setAddress(dto.getAddress());
         List<Instructor> instructorList = instructorMapper.toEntity(dto.getInstructorDtos());
         administrator.setInstructors(instructorList);

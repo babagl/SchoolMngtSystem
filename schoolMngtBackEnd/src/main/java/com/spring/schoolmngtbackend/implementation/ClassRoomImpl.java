@@ -2,6 +2,8 @@ package com.spring.schoolmngtbackend.implementation;
 
 import com.spring.schoolmngtbackend.bean.ClassRoom;
 import com.spring.schoolmngtbackend.dto.ClassRoomDto;
+import com.spring.schoolmngtbackend.mapper.ClassRoomMapper;
+import com.spring.schoolmngtbackend.repo.ClassRoomRepo;
 import com.spring.schoolmngtbackend.service.AllServices;
 import org.springframework.stereotype.Service;
 
@@ -12,28 +14,39 @@ import java.util.Optional;
 @Service
 @Transactional
 public class ClassRoomImpl implements AllServices<ClassRoom, ClassRoomDto> {
+    private ClassRoomRepo classRoomRepo;
+    private ClassRoomMapper classRoomMapper;
+
+    public ClassRoomImpl(ClassRoomRepo classRoomRepo, ClassRoomMapper classRoomMapper) {
+        this.classRoomRepo = classRoomRepo;
+        this.classRoomMapper = classRoomMapper;
+    }
+
     @Override
     public Optional<ClassRoom> getById(long id) {
-        return Optional.empty();
+        return classRoomRepo.findById(id);
     }
 
     @Override
     public List<ClassRoom> getAll() {
-        return null;
+        return classRoomRepo.findAll();
     }
 
     @Override
     public ClassRoom create(ClassRoomDto dto) {
-        return null;
+        ClassRoom classRoom = classRoomMapper.toEntity(dto);
+        return classRoomRepo.save(classRoom);
     }
 
     @Override
     public ClassRoom update(ClassRoomDto dto) {
-        return null;
+        ClassRoom classRoom = classRoomMapper.toEntity(dto);
+        classRoom.setMatriculeClass(dto.getMatriculeClass());
+        return classRoomRepo.save(classRoom);
     }
 
     @Override
     public void delete(long id) {
-
+        classRoomRepo.deleteById(id);
     }
 }

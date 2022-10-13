@@ -16,18 +16,20 @@ public class Instructor {
     @Column(name = "idInstructor")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idInstructor;
-    @Column(name = "fullname")
+    @Column(name = "fullName")
     private String fullName;
-    @Column(name = "userName",unique = true)
-    private String userName;
+    @Column(name = "username",unique = true)
+    private String username;
     @Column(name = "email")
-    private String Email;
+    private String email;
     @Column(name = "password")
     private String password;
     @Column(name = "birthday")
     private LocalDate Birthday;
     @Column(name = "address")
     private String address;
+    @Enumerated(EnumType.STRING)
+    private Roles roles;
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {CascadeType.MERGE}

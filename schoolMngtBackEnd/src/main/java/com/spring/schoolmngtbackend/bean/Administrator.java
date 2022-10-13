@@ -15,18 +15,21 @@ public class Administrator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idAdministrator;
-    @Column(name = "fullname")
+    @Column(name = "fullName")
     private String fullName;
-    @Column(name = "username",unique = true)
+    @Column(name = "userName",unique = true)
     private String userName;
     @Column(name = "email")
-    private String Email;
+    private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "Birthday")
-    private LocalDate Birthday;
+    @Column(name = "birthday")
+    private LocalDate birthday;
     @Column(name = "address")
     private String address;
+
+    @Enumerated(EnumType.STRING)
+    private Roles roles;
     @OneToMany(cascade = CascadeType.DETACH)
     List<Instructor> instructors;
     @OneToMany(cascade = CascadeType.DETACH)
@@ -39,13 +42,14 @@ public class Administrator {
     public Administrator() {
     }
 
-    public Administrator(String fullName, String userName, String email, String password, LocalDate birthday, String address, List<Instructor> instructors, List<TimeTable> timeTables, List<Students> students, List<Staff> staff) {
+    public Administrator(String fullName, String userName, String email, String password, LocalDate birthday, String address, Roles roles, List<Instructor> instructors, List<TimeTable> timeTables, List<Students> students, List<Staff> staff) {
         this.fullName = fullName;
         this.userName = userName;
-        Email = email;
+        this.email = email;
         this.password = password;
-        Birthday = birthday;
+        this.birthday = birthday;
         this.address = address;
+        this.roles = roles;
         this.instructors = instructors;
         this.timeTables = timeTables;
         this.students = students;

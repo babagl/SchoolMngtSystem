@@ -1,7 +1,9 @@
 package com.spring.schoolmngtbackend.mapper;
 
 import com.spring.schoolmngtbackend.bean.ClassRoom;
+import com.spring.schoolmngtbackend.bean.Students;
 import com.spring.schoolmngtbackend.dto.ClassRoomDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -9,9 +11,15 @@ import java.util.List;
 @Component
 public class ClassRoomMapper implements EntityMapper<ClassRoom, ClassRoomDto> {
 
+    @Autowired
+    private StudentMapper studentMapper;
     @Override
     public ClassRoom toEntity(ClassRoomDto dto) {
-        return null;
+        ClassRoom classRoom = new ClassRoom();
+        classRoom.setClassName(dto.getClassName());
+        List<Students> studentsList = studentMapper.toEntity(dto.getStudentDtos());
+        classRoom.setStudents(studentsList);
+        return classRoom;
     }
 
     @Override
