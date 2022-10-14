@@ -34,14 +34,16 @@ public class ClassRoomImpl implements AllServices<ClassRoom, ClassRoomDto> {
 
     @Override
     public ClassRoom create(ClassRoomDto dto) {
+        System.out.println(dto.getClassName()+"dtp added");
         ClassRoom classRoom = classRoomMapper.toEntity(dto);
+        System.out.println(classRoom.getClassName()+"...added");
         return classRoomRepo.save(classRoom);
     }
 
     @Override
     public ClassRoom update(ClassRoomDto dto) {
         ClassRoom classRoom = classRoomMapper.toEntity(dto);
-        classRoom.setMatriculeClass(dto.getMatriculeClass());
+        classRoom.setClassName(dto.getClassName());
         return classRoomRepo.save(classRoom);
     }
 

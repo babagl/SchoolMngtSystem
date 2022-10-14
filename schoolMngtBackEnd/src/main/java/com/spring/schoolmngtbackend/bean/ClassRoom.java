@@ -11,9 +11,9 @@ public class ClassRoom {
     @Id
     @Column(name = "matriculeClass")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long matriculeClass;
+    private Long matriculeClassroom;
 
-    @Column(name = "ClasseName",unique = true)
+    @Column(name = "className",unique = true)
     private String className;
 
     @OneToMany(

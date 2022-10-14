@@ -49,4 +49,10 @@ public class InstructorImp implements AllServices<Instructor, InstructorDto> {
     public void delete(long id) {
         instructorRepo.deleteById(id);
     }
+
+    public Instructor getInstructorByUsername(String username){
+        System.out.println(instructorRepo.findByUsername(username).getFullName());
+        System.out.println(instructorRepo.findByUsername(username).getBirthday());
+        return instructorRepo.findByUsername(username);
+    }
 }

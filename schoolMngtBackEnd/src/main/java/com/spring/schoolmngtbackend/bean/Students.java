@@ -16,16 +16,18 @@ public class Students {
     private Long idStudent;
     @Column(name = "fullname")
     private String fullName;
-    @Column(name = "userName",unique = true)
-    private String userName;
+    @Column(name = "username",unique = true)
+    private String username;
     @Column(name = "password")
     private String password;
     @Column(name = "email")
     private String Email;
     @Column(name = "birthday")
-    private LocalDate BirthDay;
+    private LocalDate birthDay;
     @Column(name = "address")
     private String address;
+    @Enumerated(EnumType.STRING)
+    private Roles roles;
     @Column(name = "registrationDate")
     private LocalDateTime DateOfRegister;
     @OneToOne
@@ -35,4 +37,5 @@ public class Students {
     public Students() {
 
     }
+
 }

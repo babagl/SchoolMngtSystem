@@ -29,12 +29,13 @@ public class ClassRoomController {
     }
 
     @PostMapping
-    public ClassRoom create(ClassRoomDto dto) {
+    public ClassRoom create(@RequestBody ClassRoomDto dto) {
+        System.out.println(dto.getClassName());
         return service.create(dto);
     }
 
     @PutMapping
-    public ClassRoom update(ClassRoomDto dto) {
+    public ClassRoom update(@RequestBody ClassRoomDto dto) {
         return service.update(dto);
     }
 

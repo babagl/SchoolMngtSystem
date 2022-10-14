@@ -29,19 +29,24 @@ public class InstructorController {
     }
 
     @PostMapping
-    public Instructor create(InstructorDto dto) {
+    public Instructor create(@RequestBody InstructorDto dto) {
         System.out.println(dto.getBirthday());
         return instructorImp.create(dto);
     }
 
     @PutMapping
-    public Instructor update(InstructorDto dto) {
+    public Instructor update(@RequestBody InstructorDto dto) {
 
         return instructorImp.update(dto);
     }
 
-    @DeleteMapping
-    public void delete(long id) {
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable long id) {
         instructorImp.delete(id);
+    }
+
+    @GetMapping("/{username}")
+    public Instructor getInstructorByUsername(@PathVariable String username){
+        return instructorImp.getInstructorByUsername(username);
     }
 }

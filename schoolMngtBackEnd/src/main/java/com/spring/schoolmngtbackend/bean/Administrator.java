@@ -17,8 +17,8 @@ public class Administrator {
     private long idAdministrator;
     @Column(name = "fullName")
     private String fullName;
-    @Column(name = "userName",unique = true)
-    private String userName;
+    @Column(name = "username",unique = true)
+    private String username;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
@@ -42,17 +42,4 @@ public class Administrator {
     public Administrator() {
     }
 
-    public Administrator(String fullName, String userName, String email, String password, LocalDate birthday, String address, Roles roles, List<Instructor> instructors, List<TimeTable> timeTables, List<Students> students, List<Staff> staff) {
-        this.fullName = fullName;
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.birthday = birthday;
-        this.address = address;
-        this.roles = roles;
-        this.instructors = instructors;
-        this.timeTables = timeTables;
-        this.students = students;
-        this.staff = staff;
-    }
 }

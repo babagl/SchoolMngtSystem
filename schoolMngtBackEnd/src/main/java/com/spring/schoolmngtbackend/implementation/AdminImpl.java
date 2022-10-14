@@ -57,4 +57,8 @@ public class AdminImpl implements AdministratorService {
     public void delete(long id) {
         repo.deleteById(id);
     }
+
+    public Administrator getAdminByUsername(String username){
+       return repo.findByUsername(username);
+    }
 }

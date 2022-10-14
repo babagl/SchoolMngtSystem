@@ -16,9 +16,10 @@ public class AdministratorMapper implements EntityMapper<Administrator, Administ
     StaffMapper staffMapper = new StaffMapper();
     @Override
     public Administrator toEntity(AdministratorDto dto) {
+
         Administrator administrator = new Administrator();
         administrator.setFullName(dto.getFullName());
-        administrator.setUserName(dto.getUserName());
+        administrator.setUsername(dto.getUsername());
         administrator.setEmail(dto.getEmail());
         administrator.setPassword(dto.getPassword());
         administrator.setBirthday(LocalDate.of(2021,12,12));

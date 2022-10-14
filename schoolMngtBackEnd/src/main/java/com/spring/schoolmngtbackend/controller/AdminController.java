@@ -4,8 +4,6 @@ import com.spring.schoolmngtbackend.bean.Administrator;
 import com.spring.schoolmngtbackend.dto.AdministratorDto;
 import com.spring.schoolmngtbackend.implementation.AdminImpl;
 import com.spring.schoolmngtbackend.mapper.StudentMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +12,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/Administrator")
 public class AdminController {
-    @Autowired
-    private AdminImpl services;
 
+    private AdminImpl services;
     private StudentMapper studentMapper;
+
+    public AdminController(AdminImpl services, StudentMapper studentMapper) {
+        this.services = services;
+        this.studentMapper = studentMapper;
+    }
 
     @GetMapping("/{id}")
     public Optional<Administrator> getById(@PathVariable long id) {
@@ -43,5 +45,9 @@ public class AdminController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         services.delete(id);
+    }
+    @GetMapping("/username/{username}")
+    public Administrator getAdminByUsername(@PathVariable String username){
+        return services.getAdminByUsername(username);
     }
 }

@@ -16,7 +16,7 @@ public class AdministratorDto {
 
     private String fullName;
 
-    private String userName;
+    private String username;
 
     private String email;
 
@@ -34,16 +34,5 @@ public class AdministratorDto {
 
     List<StaffDto> staffDtos;
 
-    public AdministratorDto(String fullName, String userName, String email, String password, String birthday, String address, List<InstructorDto> instructorDtos, List<TimeTableDto> timeTableDtos, List<StudentDto> studentDtos, List<StaffDto> staffDtos) {
-        this.fullName = fullName;
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.birthday = birthday;
-        this.address = address;
-        this.instructorDtos = instructorDtos;
-        this.timeTableDtos = timeTableDtos;
-        this.studentDtos = studentDtos;
-        this.staffDtos = staffDtos;
-    }
+
 }
