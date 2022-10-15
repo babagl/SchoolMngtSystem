@@ -13,5 +13,5 @@ public class TimeTableDto {
     private String matiere;
     private String StartTime;
     private String EndTime;
-    List<Instructor> instructors;
+    List<InstructorDto> instructorsDtos;
 }
