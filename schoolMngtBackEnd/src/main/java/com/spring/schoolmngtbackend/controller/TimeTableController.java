@@ -29,13 +29,13 @@ public class TimeTableController {
     }
 
    @PostMapping
-    public TimeTable create(TimeTableDto dto) {
+    public TimeTable create(@RequestBody TimeTableDto dto) {
 
         return timeTableService.create(dto);
     }
 
     @PutMapping
-    public TimeTable update(TimeTableDto dto) {
+    public TimeTable update(@RequestBody TimeTableDto dto) {
         return timeTableService.update(dto);
     }
 
